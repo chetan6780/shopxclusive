@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopxclusive</title>
+    <link rel="stylesheet" href="{% static 'shop/styles.css' %}">
+
+</head>
+
+<body>
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auti px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <div>
+                        <a href="/shop/products/" class="flex item-center px-2 py-4">
+                            <img src="{% static 'shop/img/shopping.svg' %}" alt="" class="h-8 w-8">
+                            <span class="text-gray-500 font-semibold text-lg">Shopxclusive</span>
+                        </a>
+                    </div>
+                    <div class="flex items-center space-x-1">
+                        <a href="#"
+                            class="py-4 px-2 text-gray-500 font-semibold border-boto border-b-4 border-green-500 ">Home</a>
+                        <a href="#" class="py-4 px-2 text-gray-500 font-semibold">About</a>
+                        <a href="#" class="py-4 px-2 text-gray-500 font-semibold">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    {% block body %}
+    {% endblock body %}
+
+    {% block content %}
+    {% endblock content %}
+
+</body>
+
+</html>
