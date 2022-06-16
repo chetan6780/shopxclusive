@@ -18,7 +18,7 @@
             <div class="flex justify-between">
                 <div class="flex space-x-7">
                     <div>
-                        <a href="/shop/products/" class="flex item-center px-2 py-4">
+                        <a href="{% url 'shop:products' %}" class="flex item-center px-2 py-4">
                             <img src="{% static 'shop/img/shopping.svg' %}" alt="" class="h-8 w-8">
                             <span class="text-gray-500 font-semibold text-lg">Shopxclusive</span>
                         </a>
@@ -26,10 +26,14 @@
                     <div class="flex items-center space-x-1">
                         <a href="#"
                             class="py-4 px-2 text-gray-500 font-semibold border-boto border-b-4 border-green-500 ">Home</a>
-                        <a href="#" class="py-4 px-2 text-gray-500 font-semibold">About</a>
-                        <a href="#" class="py-4 px-2 text-gray-500 font-semibold">Contact</a>
+                        <a href="{% url 'shop:add_product' %}" class="py-4 px-4 text-gray-500 font-semibold">Post
+                            Add</a>
+                        <a href="{% url 'shop:products' %}" class="py-4 px-2 text-gray-500 font-semibold">View
+                            Products</a>
                         {% if user.is_authenticated %}
-                        <a class="py-4 px-40 text-gray-500 font-semibold" href="{% url 'users:logout' %}">Logout</a>
+                        <a class="py-4 px-2 text-gray-500 font-semibold" href="{% url 'shop:my_listings' %}">My
+                            listings</a>
+                        <a class="py-4 px-20 text-gray-500 font-semibold" href="{% url 'users:logout' %}">Logout</a>
                         <a class="py-4 px-40 text-gray-500 font-semibold" href="{% url 'users:profile' %}">Profile</a>
                         {% else %}
                         <a class="py-4 px-40 text-gray-500 font-semibold" href="{% url 'users:login' %}">Login</a>
