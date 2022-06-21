@@ -6,11 +6,11 @@ app_name = 'shop'
 
 urlpatterns = [
     path('', views.index),
-    path('products/', views.products,name='products'),
-    path('products/<int:product_id>/', views.product_detail, name='product_detail'),
-    path('products/add/', views.add_product, name='add_product'),
-    path('products/update/<int:product_id>/', views.update_product, name='update_product'),
-    path('products/delete/<int:product_id>/', views.delete_product, name='delete_product'),
+    path('products/', views.ProductListView.as_view(),name='products'),
+    path('products/<int:pk>/', views.ProductDetailView.as_view(), name='product_detail'),
+    path('products/add/', views.ProductCreateView.as_view(), name='add_product'),
+    path('products/update/<int:pk>/', views.ProductUpdateView.as_view(), name='update_product'),
+    path('products/delete/<int:pk>/', views.ProductDeleteView.as_view(), name='delete_product'),
     path('products/mylistings', views.my_listings,name='my_listings'),
 
 ]
